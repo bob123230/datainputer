@@ -3,37 +3,43 @@ namespace input{
     export function stringinput(tip:string = ""):string{
         let ing = true, code = 97, _str = "";
         basic.showString(tip, 100)
+        control.inBackground(function() {
+            input.onButtonPressed(Button.A, function() {
+                if(code > 32){
+                    code -= 1
+                    led.stopAnimation()
+                }
+            })
 
-        input.onButtonPressed(Button.A, function() {
-            if(code > 32){
-                code -= 1
-                led.stopAnimation()
-            }
-        })
-
-        input.onButtonPressed(Button.B, function() {
-            
-            if (code < 128) {
-                code += 1
-                led.stopAnimation()
-            }
-        })
-
-        input.onButtonPressed(Button.AB, function() {
-            if (code < 127) {
-                _str = _str + String.fromCharCode(code)
-
-                led.stopAnimation()
-            }
-            else if(code < 128){
-                ing = false
-
-                basic.clearScreen()
+            input.onButtonPressed(Button.B, function() {
                 
-            }
-            else{
-                _str = _str.substr(0, (_str.length - 1))
-            }
+                if (code < 129) {
+                    code += 1
+                    led.stopAnimation()
+                }
+            })
+
+            input.onButtonPressed(Button.AB, function() {
+                if (code < 127) {
+                    _str = _str + String.fromCharCode(code)
+
+                    led.stopAnimation()
+                }
+                else if(code < 128){
+                    ing = false
+
+                    basic.clearScreen()
+                    
+                }
+                else if(code < 129){
+                    _str = _str.substr(0, (_str.length - 1))
+                }
+                else{
+
+                    basic.clearScreen()
+                    basic.showString(_str, 100)
+                }
+            })
         })
         while (true) {
 
@@ -46,8 +52,18 @@ namespace input{
 
                     basic.showIcon(IconNames.Yes)
                 }
-                else{
+                else if(code <= 128){
                     basic.showIcon(IconNames.No)
+                }
+                else{
+
+                    basic.showLeds(`
+                    . . . . .
+                    . # # # .
+                    # . # . #
+                    . # # # .
+                    . . . . .
+                    `)
                 }
             }
             else{
@@ -69,32 +85,36 @@ namespace input{
         }
 
         basic.showString(tip, 100)
-        input.onButtonPressed(Button.A, function() {
-            if(_num > _small){
-                _num -= 1;
 
-                led.stopAnimation()
-            }
-        })
-        input.onButtonPressed(Button.B, function () {
-            if (_num < _big) {
-                _num += 1;
+        control.inBackground(function() {
+            input.onButtonPressed(Button.A, function() {
+                if(_num > _small){
+                    _num -= 1;
 
-                led.stopAnimation()
-            }
-        })
-        input.onButtonPressed(Button.AB, function() {
-            ing = false;
+                    led.stopAnimation()
+                }
+            })
+            input.onButtonPressed(Button.B, function () {
+                if (_num < _big) {
+                    _num += 1;
+
+                    led.stopAnimation()
+                }
+            })
+            input.onButtonPressed(Button.AB, function() {
+                ing = false;
+            })
         })
         while (true){
             if(ing){
-                basic.showNumber(_num)
+                basic.showNumber(_num, 100)
             }
             else{
                 basic.clearScreen()
                 break;
             }
         }
+
         return _num;
     }
 }
