@@ -7,21 +7,6 @@ basic.showString("Test2:")
 let _i = input.int_input("input a number:", 3, -3, 1)
 basic.showString("data:")
 basic.showNumber(_i)
-
 basic.showString("Test3:")
-let a = false, b = true
-input.onButtonPressed(Button.A, function() {
-
-    basic.showString("A pressed.")
-    a = true;
-})
-input.onButtonPressed(Button.B, function() {
-    basic.showString("B pressed.")
-    b = true;
-})
-while (true){
-    if(a) if (b){
-        basic.showString("Done.")
-        break
-    }
-}
+i = choose(["a", "b", "c"], "Choose any:")
+basic.showString("You choose:" + i)

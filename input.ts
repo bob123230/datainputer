@@ -117,4 +117,38 @@ namespace input{
 
         return _num;
     }
+    //% block
+    export function choose(_list:string[], tip = ""):string{
+        let num = 0, ing = true, _big = _list.length;
+        basic.showString(tip, 100)
+        control.inBackground(function () {
+            input.onButtonPressed(Button.A, function () {
+                if (num > 0) {
+                    num -= 1;
+
+                    led.stopAnimation()
+                }
+            })
+            input.onButtonPressed(Button.B, function () {
+                if (num < _big) {
+                    num += 1;
+
+                    led.stopAnimation()
+                }
+            })
+            input.onButtonPressed(Button.AB, function () {
+                ing = false;
+            })
+        })
+        while (true) {
+            if (ing) {
+                basic.showString(_list[num])
+            }
+            else {
+                basic.clearScreen()
+                break;
+            }
+        }
+        return _list[num];
+    }
 }
