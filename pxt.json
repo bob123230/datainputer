@@ -12,7 +12,8 @@
         "input.ts",
         "main.ts",
         "main.py",
-        "_locales/zh-CN/README.md"
+        "_locales/zh-CN/README.md",
+        "locales.json"
     ],
     "testFiles": [
         "test.ts"
