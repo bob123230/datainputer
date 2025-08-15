@@ -12,7 +12,8 @@
         "input.ts",
         "main.ts",
         "main.py",
-        "_locales/zh-CN/README.md"
+        "_locales/zh-CN/README.md",
+        "_locales/en-US/README.md"
     ],
     "testFiles": [
         "test.ts"
@@ -24,5 +25,5 @@
     "supportedTargets": [
         "microbit"
     ],
-    "preferredEditor": "pyprj"
+    "preferredEditor": "tsprj"
 }
