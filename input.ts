@@ -1,6 +1,6 @@
-//% color="purple" block="数据输入"
+//% color="purple" block="Input data"
 namespace inputdata {
-    //% block="输入字符串 提示 $tip"
+    //% block="inputString tip $tip"
     //tip.defl=""
     export function stringinput(tip = ""): string {
         let ing = true, code = 97, _str = "";
@@ -76,12 +76,12 @@ namespace inputdata {
         }
         return _str;
     }
-    //% block="输入整数 提示 $tip 最大值 $big 最小值 $small 默认值 $_default"
+    //% block="inputInteger tip $tip max $big min $small default $_default"
     //% tip.defl=""
     //% big.defl=0
     //% small.defl=-1
     //% _default.defl=0
-    //% inlineInputMode=inline
+    
     export function int_input(tip = "", big = 0, small = 1, _default = 0): number {
         let _small: number, _big: number, ing = true, _num = _default;
         if (big < small) {
@@ -127,7 +127,7 @@ namespace inputdata {
 
         return _num;
     }
-    //% block="在列表中选择 列表 $_list 提示 $tip"
+    //% block="chooseFromList $_list tip $tip"
     //% _tip.defl=""
     export function choose(_list: string[], tip = ""): string {
         let num = 0, ing = true, _big = _list.length - 1;
@@ -163,7 +163,7 @@ namespace inputdata {
         }
         return _list[num];
     }
-    //% block="输入任何数字 提示 $tip"
+    //% block="input all numbers tip $tip"
     //tip.defl=""
     export function numberinput(tip = ""): number {
         let code_list = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ".", "-"]
