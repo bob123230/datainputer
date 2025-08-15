@@ -10,13 +10,14 @@
         "README.md",
         "input.ts",
         "main.ts",
-        "main.py"
+        "main.py",
+        "_locales/zh-CN/README.md"
     ],
     "testFiles": [
         "test.ts"
     ],
     "targetVersions": {
-        "target": "8.0.11",
+        "target": "8.0.15",
         "targetId": "microbit"
     },
     "supportedTargets": [
