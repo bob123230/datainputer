@@ -1,0 +1,72 @@
+{
+  "en": {
+    "inputString": "Input string",
+    "inputInteger": "Input integer",
+    "inputNumber": "Input any number",
+    "chooseFromList": "Choose from list",
+    "prompt": "Prompt",
+    "max": "Max",
+    "min": "Min",
+    "default": "Default",
+    "list": "List",
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "clear": "Clear"
+  },
+  "zh": {
+    "inputString": "输入字符串",
+    "inputInteger": "输入整数",
+    "inputNumber": "输入任何数字",
+    "chooseFromList": "在列表中选择",
+    "prompt": "提示",
+    "max": "最大值",
+    "min": "最小值",
+    "default": "默认值",
+    "list": "列表",
+    "confirm": "确认",
+    "cancel": "取消",
+    "clear": "清空"
+  },
+  "es": {
+    "inputString": "Ingresar texto",
+    "inputInteger": "Ingresar entero",
+    "inputNumber": "Ingresar número",
+    "chooseFromList": "Seleccionar de lista",
+    "prompt": "Solicitud",
+    "max": "Máximo",
+    "min": "Mínimo",
+    "default": "Predeterminado",
+    "list": "Lista",
+    "confirm": "Confirmar",
+    "cancel": "Cancelar",
+    "clear": "Limpiar"
+  },
+  "fr": {
+    "inputString": "Saisir texte",
+    "inputInteger": "Saisir entier",
+    "inputNumber": "Saisir nombre",
+    "chooseFromList": "Choisir dans liste",
+    "prompt": "Invite",
+    "max": "Max",
+    "min": "Min",
+    "default": "Défaut",
+    "list": "Liste",
+    "confirm": "Confirmer",
+    "cancel": "Annuler",
+    "clear": "Effacer"
+  },
+  "ja": {
+    "inputString": "文字列を入力",
+    "inputInteger": "整数を入力",
+    "inputNumber": "数字を入力",
+    "chooseFromList": "リストから選択",
+    "prompt": "プロンプト",
+    "max": "最大",
+    "min": "最小",
+    "default": "デフォルト",
+    "list": "リスト",
+    "confirm": "確認",
+    "cancel": "キャンセル",
+    "clear": "クリア"
+  }
+}
