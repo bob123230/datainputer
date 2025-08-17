@@ -73,6 +73,7 @@ namespace inputdata {
                 basic.clearScreen()
                 break
             }
+            basic.pause(100)
         }
         return _str;
     }
@@ -123,6 +124,7 @@ namespace inputdata {
                 basic.clearScreen()
                 break;
             }
+            basic.pause(100)
         }
 
         return _num;
@@ -160,6 +162,7 @@ namespace inputdata {
                 basic.clearScreen()
                 break;
             }
+            basic.pause(100)
         }
         return _list[num];
     }
@@ -235,6 +238,7 @@ namespace inputdata {
                 basic.clearScreen()
                 break
             }
+            basic.pause(100)
         }
         return parseFloat(_str);
     }
