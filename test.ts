@@ -4,7 +4,7 @@ basic.showString("Test1:")
 let i = inputdata.stringinput("input a string:")
 basic.showString("data:" + i)
 basic.showString("Test2:")
-let _i = inputdata.int_input("input a number:", 3, -3, 1)
+let _i = inputdata.int_input()
 basic.showString("data:")
 basic.showNumber(_i)
 

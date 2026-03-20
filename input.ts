@@ -1,11 +1,13 @@
 //% color="purple" block="Input data"
 namespace inputdata {
-    //% block="inputString tip $tip"
-    //tip.defl=""
-    export function stringinput(tip = ""): string {
+    //% block="inputString || tip $tip"
+    //% tip.defl=""
+    export function stringinput(tip:string = null): string {
         let ing = true, code = 97, _str = "";
+        if(tip == null){
+            tip = ""
+        }
         basic.showString(tip, 100)
-
         input.onButtonPressed(Button.A, function () {
             if (code > 32) {
                 code -= 1
@@ -77,14 +79,17 @@ namespace inputdata {
         }
         return _str;
     }
-    //% block="inputInteger tip $tip max $big min $small default $_default"
+    //% block="inputInteger || tip $tip  max $big min $small default $_default"
     //% tip.defl=""
-    //% big.defl=0
-    //% small.defl=-1
+    //% big.defl=-1
+    //% small.defl=0
     //% _default.defl=0
-    
-    export function int_input(tip = "", big = 0, small = 1, _default = 0): number {
+    //% mode=inline
+    export function int_input(tip:string = null, big = -1, small = 0, _default = 0): number {
         let _small: number, _big: number, ing = true, _num = _default;
+        if(tip == null){
+            tip = ""
+        }
         if (big < small) {
             _small = -Infinity
             _big = Infinity
@@ -129,10 +134,14 @@ namespace inputdata {
 
         return _num;
     }
-    //% block="chooseFromList $_list tip $tip"
-    //% _tip.defl=""
-    export function choose(_list: string[], tip = ""): string {
+    //% block="chooseFromList $_list || tip $tip"
+    //% tip.defl=null
+    export function choose(_list: string[], tip:string = null): string {
+        
         let num = 0, ing = true, _big = _list.length - 1;
+        if(tip == null){
+            tip = ""
+        }
         basic.showString(tip, 100)
 
         input.onButtonPressed(Button.A, function () {
@@ -166,11 +175,14 @@ namespace inputdata {
         }
         return _list[num];
     }
-    //% block="input all numbers tip $tip"
-    //tip.defl=""
-    export function numberinput(tip = ""): number {
+    //% block="input all numbers || tip $tip"
+    //tip.defl=null
+    export function numberinput(tip:string = null): number {
         let code_list = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ".", "-"]
         let ing = true, code = 0, _str = "";
+        if(tip == null){
+            tip = ""
+        }
         basic.showString(tip, 100)
 
         input.onButtonPressed(Button.A, function () {
